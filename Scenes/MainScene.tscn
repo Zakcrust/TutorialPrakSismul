@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/TerrainMap/TerrainMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Props/CheckPoint.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Props/End.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/GameOver.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Props/Collectables.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/UI/TimeAndScoreUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Props/Saw.tscn" type="PackedScene" id=8]
+
+[node name="MainScene" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 31.176, 478.771 )
+
+[node name="TerrainMap" parent="." instance=ExtResource( 1 )]
+
+[node name="End" parent="." instance=ExtResource( 4 )]
+position = Vector2( 998.607, 479.567 )
+z_index = -1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOver" parent="CanvasLayer" instance=ExtResource( 5 )]
+
+[node name="TimeAndScore" parent="CanvasLayer" instance=ExtResource( 7 )]
+
+[node name="Collectables" parent="." instance=ExtResource( 6 )]
+position = Vector2( 176.318, 494.327 )
+
+[node name="Collectables2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 623.549, 303.675 )
+
+[node name="Collectables3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 490.805, 358.91 )
+
+[node name="Collectables4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 363.863, 491.991 )
+
+[node name="CheckPoint" parent="." instance=ExtResource( 3 )]
+position = Vector2( 63.1879, 480.383 )
+
+[node name="Saw" parent="." instance=ExtResource( 8 )]
+position = Vector2( 269.983, 502.09 )
+
+[node name="Saw2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 710.885, 513.417 )
+z_index = -1
+[connection signal="lose_ui" from="Player" to="CanvasLayer/GameOver" method="_on_Player_lose_ui"]
+[connection signal="lose_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_lose_ui"]
+[connection signal="update_life_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_update_life_ui"]
+[connection signal="update_score_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_update_score_ui"]
+[connection signal="win_ui" from="Player" to="CanvasLayer/GameOver" method="_on_Player_win_ui"]
+[connection signal="win_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_win_ui"]
