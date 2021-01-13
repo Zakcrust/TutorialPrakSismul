@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/TerrainMap.tres" type="TileSet" id=1]
+[ext_resource path="res://Scripts/Props/MovingPlatform.gd" type="Script" id=2]
+
+[node name="MovingPlatform" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Platform" type="Node2D" parent="."]
+
+[node name="TilePlatform" type="TileMap" parent="Platform"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 65533, 1, 0, 65534, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

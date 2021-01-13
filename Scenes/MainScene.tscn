@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/TerrainMap/TerrainMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Props/CheckPoint.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Props/End.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Props/MovingPlatform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/UI/GameOver.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Props/Collectables.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/UI/TimeAndScoreUI.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Props/Saw.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Props/PropsInvoker.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Props/MovingSaw.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Props/End.tscn" type="PackedScene" id=11]
 
 [node name="MainScene" type="Node2D"]
 __meta__ = {
@@ -19,9 +22,8 @@ position = Vector2( 31.176, 478.771 )
 
 [node name="TerrainMap" parent="." instance=ExtResource( 1 )]
 
-[node name="End" parent="." instance=ExtResource( 4 )]
-position = Vector2( 998.607, 479.567 )
-z_index = -1
+[node name="TileMap" parent="TerrainMap" index="0"]
+tile_data = PoolIntArray( 327878, 1, 0, 327879, 1, 0, 393414, 1, 0, 393415, 1, 0, 458950, 1, 0, 458951, 1, 0, 524486, 1, 0, 524487, 1, 0, 590022, 1, 0, 590023, 1, 0, 655378, 1, 0, 655379, 1, 0, 655558, 1, 0, 655559, 1, 0, 720913, 1, 0, 720914, 1, 0, 720915, 1, 0, 721050, 1, 0, 721051, 1, 0, 721052, 1, 0, 721053, 1, 0, 721054, 1, 0, 721055, 1, 0, 721056, 1, 0, 721057, 1, 0, 721058, 1, 0, 721059, 1, 0, 721060, 1, 0, 721061, 1, 0, 721062, 1, 0, 721063, 1, 0, 721064, 1, 0, 721065, 1, 0, 721066, 1, 0, 721067, 1, 0, 721068, 1, 0, 721069, 1, 0, 721070, 1, 0, 721071, 1, 0, 721072, 1, 0, 721073, 1, 0, 721074, 1, 0, 721075, 1, 0, 721076, 1, 0, 721085, 1, 0, 721086, 1, 0, 721087, 1, 0, 721088, 1, 0, 721089, 1, 0, 721090, 1, 0, 721091, 1, 0, 721092, 1, 0, 721093, 1, 0, 721094, 1, 0, 721095, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786620, 1, 0, 786621, 1, 0, 786622, 1, 0, 786623, 1, 0, 786624, 1, 0, 786625, 1, 0, 786626, 1, 0, 786627, 1, 0, 786628, 1, 0, 786629, 1, 0, 786630, 1, 0, 786631, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 852155, 1, 0, 852156, 1, 0, 852157, 1, 0, 852158, 1, 0, 852159, 1, 0, 852160, 1, 0, 852161, 1, 0, 852162, 1, 0, 852163, 1, 0, 852164, 1, 0, 852165, 1, 0, 852166, 1, 0, 852167, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917596, 1, 0, 917597, 1, 0, 917598, 1, 0, 917599, 1, 0, 917600, 1, 0, 917690, 1, 0, 917691, 1, 0, 917692, 1, 0, 917693, 1, 0, 917694, 1, 0, 917695, 1, 0, 917696, 1, 0, 917697, 1, 0, 917698, 1, 0, 917699, 1, 0, 917700, 1, 0, 917701, 1, 0, 917702, 1, 0, 917703, 1, 0, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983132, 1, 0, 983133, 1, 0, 983134, 1, 0, 983135, 1, 0, 983136, 1, 0, 983186, 1, 0, 983187, 1, 0, 983188, 1, 0, 983189, 1, 0, 983190, 1, 0, 983191, 1, 0, 983223, 1, 0, 983224, 1, 0, 983225, 1, 0, 983226, 1, 0, 983227, 1, 0, 983228, 1, 0, 983229, 1, 0, 983230, 1, 0, 983231, 1, 0, 983232, 1, 0, 983233, 1, 0, 983234, 1, 0, 983235, 1, 0, 983236, 1, 0, 983237, 1, 0, 983238, 1, 0, 983239, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048603, 1, 0, 1048604, 1, 0, 1048605, 1, 0, 1048606, 1, 0, 1048607, 1, 0, 1048642, 1, 0, 1048643, 1, 0, 1048644, 1, 0, 1048645, 1, 0, 1048646, 1, 0, 1048647, 1, 0, 1048648, 1, 0, 1048649, 1, 0, 1048650, 1, 0, 1048654, 1, 0, 1048655, 1, 0, 1048659, 1, 0, 1048660, 1, 0, 1048664, 1, 0, 1048665, 1, 0, 1048722, 1, 0, 1048723, 1, 0, 1048724, 1, 0, 1048725, 1, 0, 1048726, 1, 0, 1048727, 1, 0, 1048730, 1, 0, 1048731, 1, 0, 1048732, 1, 0, 1048733, 1, 0, 1048734, 1, 0, 1048735, 1, 0, 1048736, 1, 0, 1048737, 1, 0, 1048738, 1, 0, 1048739, 1, 0, 1048740, 1, 0, 1048741, 1, 0, 1048742, 1, 0, 1048743, 1, 0, 1048744, 1, 0, 1048745, 1, 0, 1048746, 1, 0, 1048747, 1, 0, 1048748, 1, 0, 1048749, 1, 0, 1048750, 1, 0, 1048751, 1, 0, 1048752, 1, 0, 1048753, 1, 0, 1048754, 1, 0, 1048755, 1, 0, 1048756, 1, 0, 1048759, 1, 0, 1048760, 1, 0, 1048761, 1, 0, 1048762, 1, 0, 1048763, 1, 0, 1048764, 1, 0, 1048765, 1, 0, 1048766, 1, 0, 1048767, 1, 0, 1048768, 1, 0, 1048769, 1, 0, 1048770, 1, 0, 1048771, 1, 0, 1048772, 1, 0, 1048773, 1, 0, 1048774, 1, 0, 1048775, 1, 0, 1114112, 1, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 1, 0, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114139, 1, 0, 1114140, 1, 0, 1114141, 1, 0, 1114142, 1, 0, 1114143, 1, 0, 1114178, 1, 0, 1114179, 1, 0, 1114180, 1, 0, 1114181, 1, 0, 1114182, 1, 0, 1114183, 1, 0, 1114184, 1, 0, 1114185, 1, 0, 1114186, 1, 0, 1114190, 1, 0, 1114191, 1, 0, 1114195, 1, 0, 1114196, 1, 0, 1114200, 1, 0, 1114201, 1, 0, 1114258, 1, 0, 1114259, 1, 0, 1114260, 1, 0, 1114261, 1, 0, 1114262, 1, 0, 1114263, 1, 0, 1114295, 1, 0, 1114296, 1, 0, 1114297, 1, 0, 1114298, 1, 0, 1114299, 1, 0, 1114300, 1, 0, 1114301, 1, 0, 1114302, 1, 0, 1114303, 1, 0, 1114304, 1, 0, 1114305, 1, 0, 1114306, 1, 0, 1114307, 1, 0, 1114308, 1, 0, 1114309, 1, 0, 1114310, 1, 0, 1114311, 1, 0, 1179648, 1, 0, 1179649, 1, 0, 1179650, 1, 0, 1179651, 1, 0, 1179652, 1, 0, 1179653, 1, 0, 1179654, 1, 0, 1179658, 1, 0, 1179659, 1, 0, 1179660, 1, 0, 1179661, 1, 0, 1179662, 1, 0, 1179663, 1, 0, 1179664, 1, 0, 1179665, 1, 0, 1179666, 1, 0, 1179667, 1, 0, 1179668, 1, 0, 1179669, 1, 0, 1179670, 1, 0, 1179671, 1, 0, 1179675, 1, 0, 1179676, 1, 0, 1179677, 1, 0, 1179678, 1, 0, 1179679, 1, 0, 1179714, 1, 0, 1179715, 1, 0, 1179716, 1, 0, 1179717, 1, 0, 1179718, 1, 0, 1179719, 1, 0, 1179720, 1, 0, 1179721, 1, 0, 1179722, 1, 0 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -50,9 +52,99 @@ position = Vector2( 269.983, 502.09 )
 [node name="Saw2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 710.885, 513.417 )
 z_index = -1
-[connection signal="lose_ui" from="Player" to="CanvasLayer/GameOver" method="_on_Player_lose_ui"]
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1164, 512 )
+travel_time = 4.0
+wait_time = 3.0
+
+[node name="Position2D" type="Position2D" parent="MovingPlatform"]
+position = Vector2( 750, 0 )
+
+[node name="PropsInvoker" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1011.44, 423.812 )
+target_node = NodePath("../MovingPlatform")
+
+[node name="Saw3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2445, 508 )
+
+[node name="Saw4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2610, 508 )
+
+[node name="Saw5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2770, 508 )
+
+[node name="CheckPoint2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2198.5, 479.5 )
+
+[node name="PropsInvoker2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3090.38, 327.756 )
+target_node = NodePath("../MovingPlatform2")
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3264, 448 )
+travel_time = 6.0
+wait_time = 3.0
+
+[node name="Position2D" type="Position2D" parent="MovingPlatform2"]
+position = Vector2( 1200, 0 )
+
+[node name="Saw6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3500, 420 )
+
+[node name="Saw7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4000, 420 )
+
+[node name="CheckPoint3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 4725.81, 447.488 )
+
+[node name="MovingSaw" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5000, 352 )
+travel_time = 1.0
+wait_time = 2.0
+
+[node name="Position2D" type="Position2D" parent="MovingSaw"]
+position = Vector2( 0, 160 )
+
+[node name="MovingSaw2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5100, 352 )
+travel_time = 1.0
+wait_time = 3.0
+
+[node name="Position2D" type="Position2D" parent="MovingSaw2"]
+position = Vector2( 0, 160 )
+
+[node name="MovingSaw3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5200, 352 )
+travel_time = 1.0
+wait_time = 4.0
+
+[node name="Position2D" type="Position2D" parent="MovingSaw3"]
+position = Vector2( 0, 160 )
+
+[node name="MovingSaw4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5600, 352 )
+travel_time = 1.0
+wait_time = 2.0
+
+[node name="Position2D" type="Position2D" parent="MovingSaw4"]
+position = Vector2( 0, 160 )
+
+[node name="MovingSaw5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 5500, 352 )
+travel_time = 1.0
+wait_time = 3.0
+
+[node name="Position2D" type="Position2D" parent="MovingSaw5"]
+position = Vector2( 0, 160 )
+
+[node name="End" parent="." instance=ExtResource( 11 )]
+position = Vector2( 6224.62, 319.91 )
 [connection signal="lose_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_lose_ui"]
+[connection signal="lose_ui" from="Player" to="CanvasLayer/GameOver" method="_on_Player_lose_ui"]
 [connection signal="update_life_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_update_life_ui"]
 [connection signal="update_score_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_update_score_ui"]
-[connection signal="win_ui" from="Player" to="CanvasLayer/GameOver" method="_on_Player_win_ui"]
 [connection signal="win_ui" from="Player" to="CanvasLayer/TimeAndScore" method="_on_Player_win_ui"]
+[connection signal="win_ui" from="Player" to="CanvasLayer/GameOver" method="_on_Player_win_ui"]
+
+[editable path="TerrainMap"]

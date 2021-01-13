@@ -3,7 +3,7 @@ extends KinematicBody2D
 class_name Player
 
 export (int) var speed = 200
-export (int) var jump_speed = -200
+export (int) var jump_speed = -250
 export (int) var gravity = 400
 
 signal win_ui()
@@ -76,7 +76,7 @@ func _physics_process(delta):
 		return
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
-	position.x = clamp(position.x , 10 , 1024)
+	position.x = clamp(position.x , 10 , 8000)
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = jump_speed

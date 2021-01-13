@@ -93,7 +93,7 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
 "name": "default",
-"speed": 20.0
+"speed": 27.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=19]
@@ -104,8 +104,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 18 )
-frame = 9
-playing = true
+frame = 14
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2( 9.60661, 14.435 )

@@ -2,7 +2,7 @@ extends Control
 
 var player : Player
 
-var time : float = 60
+var time : float = INF
 
 func _ready():
 	$Lives.text = "Lives : %s " % GameManager.life
